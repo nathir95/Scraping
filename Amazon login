@@ -1,0 +1,36 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+import time
+
+driver = webdriver.Chrome(r'C:\Users\nathir.haimoun\Downloads\chromedriver_win32(1)\chromedriver')
+
+driver.get('https://www.amazon.ca/')
+
+account = driver.find_element_by_class_name('nav-line-1-container')
+
+account.click()
+
+email = driver.find_element_by_id('ap_email')
+
+email.send_keys('nhaimoun@gmail.com')
+
+contbut = driver.find_element_by_class_name('a-button-input')
+
+contbut.click()
+
+
+passw = driver.find_element_by_id('ap_password')
+
+passw.send_keys('#####!')
+
+contbut1 = driver.find_element_by_id('signInSubmit')
+
+contbut1.click()
+
+
+time.sleep(5)
+
+driver.quit()
